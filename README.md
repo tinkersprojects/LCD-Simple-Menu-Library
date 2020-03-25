@@ -10,6 +10,20 @@ Making Menus for LCD easy and simple
 ## Functions
 
 ## Examples
+### Examples 1:
+'''
+
+'''
+
+### Examples 2:
+'''
+
+'''
+
+### Examples 3:
+'''
+
+'''
 
 
 
