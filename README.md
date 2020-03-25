@@ -11,19 +11,19 @@ Making Menus for LCD easy and simple
 
 ## Examples
 ### Examples 1:
-'''
+```c++
 
-'''
+```
 
 ### Examples 2:
-'''
+```c++
 
-'''
+```
 
 ### Examples 3:
-'''
+```c++
 
-'''
+```
 
 
 
