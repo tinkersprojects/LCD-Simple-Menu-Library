@@ -1,7 +1,7 @@
 # LCD-Simple-Menu
 this library is still under testing
 
-(https://tinkersprojects.com/)[https://tinkersprojects.com/]
+[https://tinkersprojects.com/](https://tinkersprojects.com/)
 
 Making Menus for LCD easy and simple
 
