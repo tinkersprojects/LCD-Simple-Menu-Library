@@ -51,12 +51,16 @@ SimpleMenu::SimpleMenu(String _name, void (*_CallBack)()) //function menu
 
 void SimpleMenu::begin(void (*_displayCallBack)(SimpleMenu *_menu))
 {
+  selectMenu = false;
+  menuLocation = 0;
   displayCallBack = _displayCallBack;
   this->print();
 }
 
 void SimpleMenu::begin(void (*_displayCallBack)(SimpleMenu *_menu),void (*_valueCallBack)(SimpleMenu *_menu))
 {
+  selectMenu = false;
+  menuLocation = 0;
   displayCallBack = _displayCallBack;
   valueCallBack = _valueCallBack;
   this->print();
@@ -64,6 +68,8 @@ void SimpleMenu::begin(void (*_displayCallBack)(SimpleMenu *_menu),void (*_value
 
 void SimpleMenu::begin(SimpleMenu *_Top,void (*_displayCallBack)(SimpleMenu *_menu),void (*_valueCallBack)(SimpleMenu *_menu))
 {
+  selectMenu = false;
+  menuLocation = 0;
   Top_menu = _Top;
   displayCallBack = _displayCallBack;
   valueCallBack = _valueCallBack;
@@ -71,7 +77,7 @@ void SimpleMenu::begin(SimpleMenu *_Top,void (*_displayCallBack)(SimpleMenu *_me
   if(CallBack != NULL)
   {
     CallBack();
-    Top_menu->back();
+    Top_menu->returnedSecond();
   }
 
   this->print();
@@ -90,22 +96,41 @@ void SimpleMenu::select()
   }
   else if(value != NULL && Top_menu != NULL)
   {
-    Top_menu->back();
+    Top_menu->returnedSecond();
   }
   this->print();
 }
 
 void SimpleMenu::back()
 {
-  ///need to fix this
-  if(selectMenu)
+  if(selectMenu && submenus != NULL)
+  {
+    submenus[menuLocation].back();
+  }
+  else if(submenus != NULL)
   {
     selectMenu = false;
   }
   else if(Top_menu != NULL)
   {
-    Top_menu->back();
+    Top_menu->returned();
   }
+  this->print();
+}
+
+void SimpleMenu::returned()
+{ 
+  if(Top_menu != NULL)
+  {
+    Top_menu->returnedSecond();
+  }
+  selectMenu = false;
+  this->print();
+}
+
+void SimpleMenu::returnedSecond()
+{
+  selectMenu = false;
   this->print();
 }
 

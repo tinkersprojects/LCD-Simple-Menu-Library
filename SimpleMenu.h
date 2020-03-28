@@ -20,22 +20,26 @@ class SimpleMenu
 
         void begin(void (*_displayCallBack)(SimpleMenu *_menu));
         void begin(void (*_displayCallBack)(SimpleMenu *_menu),void (*_valueCallBack)(SimpleMenu *_menu));
-        void begin(SimpleMenu *_Top,void (*_displayCallBack)(SimpleMenu *_menu),void (*_valueCallBack)(SimpleMenu *_menu));
 
         void select();
         void back();
+        void returned();
+        void returnedSecond();
         void up();
         void down();
         void index(int _index);
 
         SimpleMenu *next();
         SimpleMenu *next(int index);
-        void print();
         int getValue();
+        void print();
             
         String name;
 
     private:
+        void begin(SimpleMenu *_Top,void (*_displayCallBack)(SimpleMenu *_menu),void (*_valueCallBack)(SimpleMenu *_menu));
+        
+
         int menuLocation = 0;
         bool selectMenu = false;
         SimpleMenu *Top_menu = NULL;
