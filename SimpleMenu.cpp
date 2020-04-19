@@ -146,7 +146,7 @@ void SimpleMenu::up()
   }
   else
   {
-    menuLocation++;
+    menuLocation--;
   }
   this->print();
 }
@@ -163,7 +163,7 @@ void SimpleMenu::down()
   }
   else
   {
-    menuLocation--;
+    menuLocation++;
   }
   this->print();
 }
