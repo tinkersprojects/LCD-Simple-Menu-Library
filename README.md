@@ -314,11 +314,5 @@ void function()
 ```
 
 
-
-
-## Current Bugs
-- Back function is not working, its going back too far.
-
-
 ## To Be Developed 
 - adding lists for files from SD card or varables.
