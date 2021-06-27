@@ -358,7 +358,7 @@ void SimpleMenu::print()
 
 bool SimpleMenu::hasValue()
 {
-  return value != NULL
+  return value != NULL;
 }
 
 int SimpleMenu::getValue()
